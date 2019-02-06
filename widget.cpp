@@ -27,11 +27,9 @@ Widget::Widget(QWidget *parent) :
 
     ui->tableView->setModel(model);
 
-    graph->addData(1, 1);
-    graph->addData(2, 1);
-    graph->addData(2, 2);
-    graph->addData(3, 2);
-    graph->addData(3, 5);
+    QVector<double> xs{3.375,3.375,1.6875,1.6875,2.265,2.265,1.3125,1.3125};
+    QVector<double> ys{0.5,1.5625,1.5625,2.5,2.5,3.625,3.625,4.75};
+    graph->addData(xs, ys, true);
 
     rebuildResultGraph();
     ui->plot->graph()->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
